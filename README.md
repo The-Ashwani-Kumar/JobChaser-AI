@@ -10,13 +10,9 @@ This repository contains both the **backend** and **frontend** components of the
 
 1. [Features](#features)
 2. [Tech Stack](#tech-stack)
-3. [Installation](#installation)
-4. [Configuration](#configuration)
-5. [Running the Application](#running-the-application)
-6. [Project Structure](#project-structure)
-7. [Docker Setup](#docker-setup)
-8. [Contributing](#contributing)
-9. [License](#license)
+3. [Project Structure](#project-structure)
+4. [Running the Application](#running-the-application)
+5. [Contributing](#contributing)
 
 ---
 
@@ -46,6 +42,8 @@ This repository contains both the **backend** and **frontend** components of the
   
 - **DevOps**:
   - Docker & Docker Compose
+  - GitHub Actions
+  - Render/Fly.io/Vercel
 
 ---
 
@@ -65,3 +63,81 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/your-username/JobChaser-AI.git
 cd JobChaser-AI
+```
+## Project Structure
+```
+JobChaser-AI/
+├── ai/
+│   ├── resume_ai.py
+│   ├── requirements.txt
+│   └── .env
+├── backend/
+│   └── (your backend logic)
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── tailwind.config.cjs
+├── docker/
+│   └── docker-compose.yml
+├── .gitignore
+└── README.md
+```
+
+## Running the Application
+
+1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/jobchaser-ai.git
+cd jobchaser-ai
+```
+
+2. Frontend (React + Tailwind)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+3. Backend (Spring Boot)
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+Ensure your application.properties is configured with PostgreSQL URL, username, and password.
+
+4. Scraper (Python + Playwright)
+```bash
+cd scraper
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+playwright install
+python scraper.py
+```
+
+5. AI Resume Generator (Python + LLM)
+```bash
+cd ai
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python resume_ai.py
+```
+Configure your OpenAI API key in an .env file or directly in the script.
+
+6. PostgreSQL Database via Docker
+```bash
+docker compose -f docker/docker-compose.yml up -d
+```
+This sets up PostgreSQL on port 5432 with default user/password. Adjust as needed.
+
+
+## Contributing
+
+1. Fork the project
+2. Create your feature branch: git checkout -b feature/awesome-feature
+3. Commit your changes: git commit -am 'Add awesome feature'
+4. Push to the branch: git push origin feature/awesome-feature
+5. Open a pull request
+
+
