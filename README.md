@@ -64,6 +64,9 @@ Clone the repository to your local machine:
 git clone https://github.com/your-username/JobChaser-AI.git
 cd JobChaser-AI
 ```
+
+---
+
 ## Project Structure
 ```
 JobChaser-AI/
@@ -82,6 +85,7 @@ JobChaser-AI/
 ├── .gitignore
 └── README.md
 ```
+---
 
 ## Running the Application
 
@@ -131,6 +135,7 @@ docker compose -f docker/docker-compose.yml up -d
 ```
 This sets up PostgreSQL on port 5432 with default user/password. Adjust as needed.
 
+---
 
 ## Contributing
 
